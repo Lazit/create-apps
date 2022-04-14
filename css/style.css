@@ -1,3 +1,93 @@
+@import "reset.css";
+
+
 .hidden {
     display: none;
 }
+
+.bgImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    opacity: 80%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    overflow: hidden;
+}
+/* ------------------섹션 전체---------------------- */
+.section{
+    width: 100vw;
+}
+/* ------------------섹션 전체 끝---------------------- */
+
+
+/* ------------------지역 및 날씨---------------------- */
+.section1 {
+    height: 50px;
+}
+/* ------------------지역 및 날씨 끝---------------------- */
+
+
+/* ------------------시간---------------------- */
+.section2 {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    font-size: 10vw;
+}
+/* ------------------시간 끝---------------------- */
+
+
+/* ------------------로그인---------------------- */
+.section3 {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    text-align: center;
+}
+.greeting-box{
+    display: flex;
+    flex-direction: column;
+}
+/* ------------------로그인끝---------------------- */
+
+
+/* ------------------투두리스트---------------------- */
+.section4 {
+    height: 40vh;
+}
+/* ------------------투두리스트 끝---------------------- */
+
+
+/* ------------------명언---------------------- */
+.section5 {
+    position: absolute;
+    bottom: 20px;
+}
+
+.quote {
+    text-align: center;
+
+}
+
+.quote span:last-child {
+    opacity: 60%;
+}
+
+
+/* ------------------명언 끝---------------------- */
+
+
+
+

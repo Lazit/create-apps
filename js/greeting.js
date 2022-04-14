@@ -1,6 +1,6 @@
 const loginForm = document.querySelector("#login-form");
 const loginInput = loginForm.querySelector("input");
-const loginButton = loginForm.querySelector("button");
+const loginButton = loginForm.querySelector(".login-submit");
 const greeting = document.querySelector("#greeting");
 const logout = document.querySelector(".logout");
 
@@ -10,14 +10,14 @@ const USERNAME_KEY = "username"
 //변수로 집어주면 경고를 줘서 훨씬 좋다!!!
 
 function onLoginSubmit(event) {
-    // event.preventDefault();
+    logout.classList.remove(HIDDEN_CLASSNAME)
+    event.preventDefault();
     loginForm.classList.add(HIDDEN_CLASSNAME);
     //greeting.innerText = "Hello " + username;
     localStorage.setItem(USERNAME_KEY, loginInput.value)
     paintGreetings();
     // console.log(loginInput.value);
 }
-
 
 
 //임의작성
@@ -36,6 +36,7 @@ function paintGreetings() {
     const username = localStorage.getItem(USERNAME_KEY);
     greeting.innerText = `hello ${username}`; // ' 이나 " 아니고 `   << ~표시 위쪽
     greeting.classList.remove(HIDDEN_CLASSNAME)
+    loginForm.classList.add(HIDDEN_CLASSNAME);
 }
 
 
@@ -50,7 +51,6 @@ if (savedUsername === null) {
 } else {
     //show the greetings
     paintGreetings();
-    logout.classList.remove(HIDDEN_CLASSNAME)
 }
 
 
