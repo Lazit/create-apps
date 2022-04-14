@@ -12,10 +12,9 @@ const USERNAME_KEY = "username"
 function onLoginSubmit(event) {
     // event.preventDefault();
     loginForm.classList.add(HIDDEN_CLASSNAME);
-    const username = loginInput.value;
     //greeting.innerText = "Hello " + username;
-    localStorage.setItem(USERNAME_KEY, username)
-    paintGreetings(savedUsername);
+    localStorage.setItem(USERNAME_KEY, loginInput.value)
+    paintGreetings();
     // console.log(loginInput.value);
 }
 
@@ -33,8 +32,9 @@ function handleLogOut(event) {
 //임의작성 끝
 
 
-function paintGreetings(username) {
-    greeting.innerText = `hello ${username}`;
+function paintGreetings() {
+    const username = localStorage.getItem(USERNAME_KEY);
+    greeting.innerText = `hello ${username}`; // ' 이나 " 아니고 `   << ~표시 위쪽
     greeting.classList.remove(HIDDEN_CLASSNAME)
 }
 
@@ -49,6 +49,8 @@ if (savedUsername === null) {
     loginForm.addEventListener("submit", onLoginSubmit);
 } else {
     //show the greetings
-    paintGreetings(savedUsername);
+    paintGreetings();
     logout.classList.remove(HIDDEN_CLASSNAME)
 }
+
+
