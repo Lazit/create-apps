@@ -18,8 +18,9 @@ function deleteToDo(event) {
     // console.dir(event.target.parentElement)//.innerText)
     //>>now we know what was clicked!
     const li = event.target.parentElement;
-    
     li.remove();
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); // () =>   함수의 쇼트컷형식. 화살표 함수 참조.
+    saveToDos();
 }
 
 function paintToDo(newTodo) {
@@ -68,6 +69,8 @@ if (savedToDos !== null) {
     //해결 = 54번줄 추가
     //로컬 스토리지는 데이터 베이스가 아님. 데이터베이스는 array 자체이고, 로컬스토리지는 array를 복사해두는 곳임.
 }
+
+// filter예문
 // const arr = [1231,443,3231,434,22412,235,5463,452,34235,3456,3,45]
 
 // function sexyFilter(whatevernameitis) {
@@ -75,3 +78,5 @@ if (savedToDos !== null) {
 // }
 
 // arr.filter(sexyFilter)
+
+
