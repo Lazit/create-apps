@@ -18,6 +18,7 @@ function deleteToDo(event) {
     // console.dir(event.target.parentElement)//.innerText)
     //>>now we know what was clicked!
     const li = event.target.parentElement;
+    
     li.remove();
 }
 
@@ -66,5 +67,8 @@ if (savedToDos !== null) {
     //newTodo 만 저장해서 그럼. 이전 데이터의 복사본이 없음.
     //해결 = 54번줄 추가
     //로컬 스토리지는 데이터 베이스가 아님. 데이터베이스는 array 자체이고, 로컬스토리지는 array를 복사해두는 곳임.
+}
 
+function sexyFilter() {
+    
 }
