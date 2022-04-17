@@ -21,6 +21,9 @@
 .section{
     width: 100vw;
 }
+input{
+    text-align: center;
+}
 /* ------------------섹션 전체 끝---------------------- */
 
 
@@ -50,7 +53,7 @@
     height: 10vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .login-form {
@@ -66,14 +69,33 @@
 /* ------------------투두리스트---------------------- */
 .section4 {
     height: 40vh;
+    display: flex;
+    justify-content: start;
+    align-items:center;
+    flex-direction: column;
 }
+.todo-form{
+    margin-bottom: 20px;
+}
+.todo-input{
+    width: 200px;
+}
+.todo-list {
+    text-align: center;
+}
+
+.todo-list li{
+    margin-bottom: 10px;
+}
+
+
 /* ------------------투두리스트 끝---------------------- */
 
 
 /* ------------------명언---------------------- */
 .section5 {
     position: absolute;
-    bottom: 20px;
+    bottom: 50px;
 }
 
 .quote {

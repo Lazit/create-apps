@@ -27,7 +27,8 @@ function handleLogOut(event) {
     loginForm.classList.remove(HIDDEN_CLASSNAME);
     greeting.classList.add(HIDDEN_CLASSNAME);
     logout.classList.add(HIDDEN_CLASSNAME)
-    location.reload()//새로고침
+    loginInput.value = "";
+    // location.reload()//새로고침
 }
 //임의작성 끝
 

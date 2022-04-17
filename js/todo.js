@@ -7,6 +7,7 @@ const TODOS_KEY = "todos"
 
 let toDos = [];
 
+
 function saveToDos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos)) //todos는 로컬스토리지에 기록될 이름, JSON~은 값을 문자로 만들어줌. JSON.parse 와 짝꿍.
     // console.log(JSON.parse(localStorage.getItem("todos")))
@@ -47,6 +48,7 @@ function handleToDoSubmit(event) {
         id: Date.now(),
     }
     toDos.push(newToDoObj);
+    checkToDoList()
     paintToDo(newToDoObj);
     saveToDos();
 }
@@ -79,4 +81,11 @@ if (savedToDos !== null) {
 
 // arr.filter(sexyFilter)
 
+function checkToDoList() {
+    if (toDos.length >= 11) {
+        alert("You can save up to 10")
+        toDos.length = 10;
+        paintToDo.preventDefault()
+    }
+}
 
