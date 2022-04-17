@@ -68,7 +68,10 @@ if (savedToDos !== null) {
     //해결 = 54번줄 추가
     //로컬 스토리지는 데이터 베이스가 아님. 데이터베이스는 array 자체이고, 로컬스토리지는 array를 복사해두는 곳임.
 }
+// const arr = [1231,443,3231,434,22412,235,5463,452,34235,3456,3,45]
 
-function sexyFilter() {
-    
-}
+// function sexyFilter(whatevernameitis) {
+//     return whatevernameitis <= 1000
+// }
+
+// arr.filter(sexyFilter)
