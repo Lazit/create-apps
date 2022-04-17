@@ -23,8 +23,11 @@ getClock()
 setInterval(getClock, 1000)
 
 
-//이 시계는 로컬컴퓨터 타임만 따옴. 특정 시간대 또는 서버시간을 따오고 싶으면 api 검색해보기 
+//이 시계는 로컬컴퓨터 타임만 따옴. 특정 시간대 또는 서버시간을 따오고 싶으면 api 검색해보기
 //.padStart 에 대해 알고싶으면 밑을 console에 쳐보기
 // "hello".padStart(20, "x");
 
 // "1".padStart(2, 0)
+
+
+document.getElementById

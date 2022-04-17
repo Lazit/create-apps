@@ -10,9 +10,9 @@ const USERNAME_KEY = "username"
 //변수로 집어주면 경고를 줘서 훨씬 좋다!!!
 
 function onLoginSubmit(event) {
-    logout.classList.remove(HIDDEN_CLASSNAME)
+    
     event.preventDefault();
-    loginForm.classList.add(HIDDEN_CLASSNAME);
+    // loginForm.classList.add(HIDDEN_CLASSNAME);
     //greeting.innerText = "Hello " + username;
     localStorage.setItem(USERNAME_KEY, loginInput.value)
     paintGreetings();
@@ -37,6 +37,7 @@ function paintGreetings() {
     greeting.innerText = `hello ${username}`; // ' 이나 " 아니고 `   << ~표시 위쪽
     greeting.classList.remove(HIDDEN_CLASSNAME)
     loginForm.classList.add(HIDDEN_CLASSNAME);
+    logout.classList.remove(HIDDEN_CLASSNAME)
 }
 
 
