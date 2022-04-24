@@ -15,7 +15,6 @@ const FADE_OUT_CUSTOM = "fade-out-cus"
 //변수로 집어주면 경고를 줘서 훨씬 좋다!!!
 
 function onLoginSubmit(event) {
-    
     event.preventDefault();
     // loginForm.classList.add(HIDDEN_CLASSNAME);
     //greeting.innerText = "Hello " + username;
@@ -27,7 +26,7 @@ function onLoginSubmit(event) {
 
 //임의작성
 function handleLogOut(event) {
-    
+    event.preventDefault()
     const username = loginInput.value;
     localStorage.removeItem(USERNAME_KEY, username)
     greeting.classList.remove(FADE_IN)
@@ -37,6 +36,7 @@ function handleLogOut(event) {
     section.classList.remove(FADE_IN)
     section.classList.add(FADE_OUT_CUSTOM)
     setTimeout(function () {
+        section.style.display = "none"
         loginForm.classList.remove(FADE_OUT_CUSTOM);
         loginForm.classList.remove(HIDDEN_CLASSNAME);
         loginForm.classList.add(FADE_IN)
@@ -60,7 +60,7 @@ function paintGreetings() {
         section.classList.remove(FADE_OUT_CUSTOM)
         greeting.classList.remove(HIDDEN_CLASSNAME)
         logout.classList.remove(HIDDEN_CLASSNAME)
-        section.classList.remove(HIDDEN_CLASSNAME)
+        section.style.display = "flex"
         logout.classList.add(FADE_IN_CUSTOM)
         greeting.classList.add(FADE_IN)
         section.classList.add(FADE_IN)

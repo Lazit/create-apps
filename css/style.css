@@ -129,22 +129,22 @@ input{
 
 /* ------------------투두리스트---------------------- */
 .section4 {
+    display: none;
     height: 40vh;
-}
-.flex-wrap{
-    display: flex;
     justify-content: start;
     align-items:center;
     flex-direction: column;
 }
 
 .todo-title{
+    text-align: center;
     color: whitesmoke;
     font-size: 30px;
     margin-bottom: 20px;
 }
 
 .todo-form{
+    text-align: center;
     margin-bottom: 20px;
 }
 .todo-input{
