@@ -1,25 +1,31 @@
 @import "reset.css";
+@import "loading.css";
+@import "animations.css";
+@import "background.css";
+@import "fonts.css";
 
 
+
+/* defualt */
 .hidden {
     display: none;
 }
 
-.bgImage {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    z-index: -1;
-    opacity: 80%;
-    background-repeat: no-repeat;
-    object-fit: cover;
-    overflow: hidden;
+.checked{
+    text-decoration: line-through;
+    color: lightgray;
 }
+
+
 /* ------------------섹션 전체---------------------- */
-.section{
+.wrap{
     width: 100vw;
+    height: 100vh;
+    font-family: 'Exo',
+    sans-serif;
+}
+.section{
+    width: 100%;
 }
 input{
     text-align: center;
@@ -27,30 +33,68 @@ input{
 /* ------------------섹션 전체 끝---------------------- */
 
 
-/* ------------------지역 및 날씨---------------------- */
+/* ------------------지역 및 날씨 & 로그인 성공 시 아아디 및 로그아웃 버튼 출력---------------------- */
 .section1 {
-    height: 50px;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Inconsolata',
+    monospace;
+    margin-bottom: 25vh;
+    /* background-color: aliceblue; */
+}
+.weather{
+    font-style: italic;
+    font-weight: 100;
+    text-align: end;
+    opacity: 70%;
+}
+
+.greeting-box {
+    display: flex;
+    font-family: 'Noto Sans KR',
+    sans-serif;
+    font-size: 20px;
+}
+.logout{
+    height: 20px;
+    border: 0;
+    outline: 0;
+    border-radius: 3px;
+    background-color: transparent;
+    color: black;
+    font-family: 'Inconsolata',
+    monospace;
 }
 /* ------------------지역 및 날씨 끝---------------------- */
 
 
 /* ------------------시간---------------------- */
 .section2 {
-    height: 30vh;
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Libre Bodoni', serif;
+    font-size: 500px;
+    margin-bottom: 50px;
 }
 
 .clock {
-    font-size: 10vw;
+    font-size: 150px;
+    color: white;
 }
 /* ------------------시간 끝---------------------- */
 
 
 /* ------------------로그인---------------------- */
 .section3 {
-    height: 10vh;
+    /* height: 10vh; */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -59,35 +103,92 @@ input{
 .login-form {
     text-align: center;
 }
-.greeting-box{
-    display: flex;
-    flex-direction: column;
+
+.login-name{
+    width: 200px;
+    border: 0;
+    border-bottom: 1px solid white;
+    outline: 0;
+    background-color: transparent;
+    font-size: 20px;
+    font-family: 'Noto Sans KR',
+    sans-serif;
 }
+.login-name::placeholder{
+    color: white;
+}
+.login-name:focus{
+    color: white;
+}
+.login-name:focus::placeholder{
+    color: transparent;
+}
+
 /* ------------------로그인끝---------------------- */
 
 
 /* ------------------투두리스트---------------------- */
 .section4 {
     height: 40vh;
+}
+.flex-wrap{
     display: flex;
     justify-content: start;
     align-items:center;
     flex-direction: column;
 }
+
+.todo-title{
+    color: whitesmoke;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
 .todo-form{
     margin-bottom: 20px;
 }
 .todo-input{
     width: 200px;
+    border: 0;
+    border-bottom: 1px solid whitesmoke;
+    outline: 0;
+    background-color: transparent;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-family: 'Noto Sans KR',
+    sans-serif;
 }
+.todo-input::placeholder {
+    color: whitesmoke;
+}
+
+.todo-input:focus {
+    color: white;
+}
+
+.todo-input:focus::placeholder {
+    color: transparent;
+}
+
+
+
 .todo-list {
     text-align: center;
 }
 
 .todo-list li{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: whitesmoke;
+    font-family: 'Noto Sans KR',
+    sans-serif;
 }
-
+.delete-button{
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    padding-left: 10px;
+}
 
 /* ------------------투두리스트 끝---------------------- */
 
@@ -96,10 +197,13 @@ input{
 .section5 {
     position: absolute;
     bottom: 50px;
+    font-family: 'Inconsolata',
+    monospace;
 }
 
 .quote {
     text-align: center;
+    color: whitesmoke;
 
 }
 

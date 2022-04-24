@@ -5,8 +5,10 @@ const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos"
 
-let toDos = [];
 
+let toDos = [];
+// let toDoPrefix = Array.from(Array(11).keys())
+// console.log(toDoPrefix)
 
 function saveToDos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos)) //todos는 로컬스토리지에 기록될 이름, JSON~은 값을 문자로 만들어줌. JSON.parse 와 짝꿍.
@@ -18,22 +20,38 @@ function deleteToDo(event) {
     // yet we don't know which click it was! second one? or first one?
     // console.dir(event.target.parentElement)//.innerText)
     //>>now we know what was clicked!
-    const li = event.target.parentElement;
-    li.remove();
-    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); // () =>   함수의 쇼트컷형식. 화살표 함수 참조.
+    const deletedItem = event.target.parentElement;
+    deletedItem.remove();
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(deletedItem.id)); // () =>   함수의 쇼트컷형식. 화살표 함수 참조.
     saveToDos();
+}
+
+function completeToDo(event) {
+    const completeItem = event.target.parentElement;
+    completeItem.classList.toggle('checked');
 }
 
 function paintToDo(newTodo) {
     const li = document.createElement("li")
+    li.classList.add("swing-in-top-fwd")
     li.id = newTodo.id
     const span = document.createElement("span")
+    // const prefix = toDos.indexOf(newTodo)
+    // console.log(prefix)
+    // const prefixSpan = document.createElement("span")
+    // prefixSpan.innerText = `${prefix + 1}.`
+    // li.append(prefixSpan)
     span.innerText = newTodo.text;
-    const button = document.createElement("button")
-    button.innerText = "x";
-    button.addEventListener("click", deleteToDo)
+    // const checkButton = document.createElement("button")
+    const delButton = document.createElement("button")
+    delButton.classList.add("delete-button")
+    // checkButton.innerText = 'o';
+    delButton.innerText = "X";
+    // checkButton.addEventListener("click", completeToDo)
+    delButton.addEventListener("click", deleteToDo)
     li.appendChild(span);
-    li.appendChild(button);
+    // li.appendChild(checkButton)
+    li.appendChild(delButton);
     toDoList.appendChild(li);
 }
 
@@ -82,10 +100,9 @@ if (savedToDos !== null) {
 // arr.filter(sexyFilter)
 
 function checkToDoList() {
-    if (toDos.length >= 11) {
-        alert("You can save up to 10")
-        toDos.length = 10;
+    if (toDos.length >= 7) {
+        alert("You can save up to 6")
+        toDos.length = 6;
         paintToDo.preventDefault()
     }
 }
-
