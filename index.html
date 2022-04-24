@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <title>Momentum App</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,7 +13,16 @@
 <body>
     <div class="wrap">
         <div class="section section1">
-            <!--지역 및 날씨-->
+            <!-- 로그인 시 아이디 및 로그아웃 버튼 표시 -->
+            <div class="greeting-box">
+                <h1 id="greeting" class="greeting hidden"></h1>
+                <input type="submit" class="logout hidden" value="change">
+            </div>
+            <div id="weather" class="weather">
+                <!--지역 및 날씨-->
+                <span></span>
+                <span></span>
+            </div>
         </div>
         <div class="section section2">
             <!--시간-->
@@ -22,29 +32,35 @@
             <!--로그인 -->
             <form class="login-form hidden" id="login-form">
                 <input class="login-name" type="text" placeholder="What is your name?" required maxlength="15"><br>
-                <input class="login-submit" type="submit" value="Log In">
+                <!-- <input class="login-submit" type="submit" value="Log In"> -->
             </form>
-            <div class="greeting-box">
+            <!-- <div class="greeting-box">
                 <h1 id="greeting" class="greeting hidden"></h1>
                 <input type="submit" class="logout hidden" value="Log Out">
-            </div>
+            </div> -->
         </div>
-        <div class="section section4">
-            <!-- To do -->
-            <form id="todo-form" class="todo-form">
-                <input class="todo-input" type="text" placeholder="Write a To Do and Press Enter" required />
-            </form>
-            <ul id="todo-list" class="todo-list"></ul>
+        <div class="section section4 hidden">
+            <div class="flex-wrap">
+                <!-- To do -->
+                <h1 class="todo-title">TO DO LIST</h1>
+                <form id="todo-form" class="todo-form">
+                    <input class="todo-input" type="text" placeholder="Write a To Do" required />
+                </form>
+                <ul id="todo-list" class="todo-list"></ul>
+            </div>
         </div>
         <div class="section section5">
             <!--명언 & etc-->
             <div id="quote" class="quote">
-                <span></span><br>
-                <span></span>
+                <span class="quote-text"></span><br>
+                <span class="quote-author"></span>
             </div>
         </div>
     </div>
+    <div class="loading"></div>
+    <div class="photo-filter"></div>
 
+    <script src="js/loading.js"></script>
     <script src="js/greeting.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>

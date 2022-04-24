@@ -3,9 +3,14 @@ const loginInput = loginForm.querySelector("input");
 const loginButton = loginForm.querySelector(".login-submit");
 const greeting = document.querySelector("#greeting");
 const logout = document.querySelector(".logout");
+const section = document.querySelector(".section4")
 
 const HIDDEN_CLASSNAME = "hidden"
 const USERNAME_KEY = "username"
+const FADE_IN = "fade-in"
+const FADE_IN_CUSTOM = "fade-in-cus"
+const FADE_OUT = "fade-out"
+const FADE_OUT_CUSTOM = "fade-out-cus"
 //임의로 사용된 string은 실수 시 경고없이 무반응.
 //변수로 집어주면 경고를 줘서 훨씬 좋다!!!
 
@@ -22,11 +27,20 @@ function onLoginSubmit(event) {
 
 //임의작성
 function handleLogOut(event) {
+    
     const username = loginInput.value;
     localStorage.removeItem(USERNAME_KEY, username)
-    loginForm.classList.remove(HIDDEN_CLASSNAME);
-    greeting.classList.add(HIDDEN_CLASSNAME);
-    logout.classList.add(HIDDEN_CLASSNAME)
+    greeting.classList.remove(FADE_IN)
+    greeting.classList.add(FADE_OUT_CUSTOM);
+    logout.classList.remove(FADE_IN_CUSTOM)
+    logout.classList.add(FADE_OUT_CUSTOM);
+    section.classList.remove(FADE_IN)
+    section.classList.add(FADE_OUT_CUSTOM)
+    setTimeout(function () {
+        loginForm.classList.remove(FADE_OUT_CUSTOM);
+        loginForm.classList.remove(HIDDEN_CLASSNAME);
+        loginForm.classList.add(FADE_IN)
+     }, 200)
     loginInput.value = "";
     // location.reload()//새로고침
 }
@@ -35,10 +49,22 @@ function handleLogOut(event) {
 
 function paintGreetings() {
     const username = localStorage.getItem(USERNAME_KEY);
-    greeting.innerText = `hello ${username}`; // ' 이나 " 아니고 `   << ~표시 위쪽
-    greeting.classList.remove(HIDDEN_CLASSNAME)
-    loginForm.classList.add(HIDDEN_CLASSNAME);
-    logout.classList.remove(HIDDEN_CLASSNAME)
+    greeting.innerText = `${username}`; // ' 이나 " 아니고 `   << ~표시 위쪽
+    loginForm.classList.add(FADE_OUT_CUSTOM);
+    setTimeout(function () {
+        loginForm.classList.add(HIDDEN_CLASSNAME);
+     }, 200)
+    setTimeout(function () {
+        greeting.classList.remove(FADE_OUT_CUSTOM)
+        logout.classList.remove(FADE_OUT_CUSTOM)
+        section.classList.remove(FADE_OUT_CUSTOM)
+        greeting.classList.remove(HIDDEN_CLASSNAME)
+        logout.classList.remove(HIDDEN_CLASSNAME)
+        section.classList.remove(HIDDEN_CLASSNAME)
+        logout.classList.add(FADE_IN_CUSTOM)
+        greeting.classList.add(FADE_IN)
+        section.classList.add(FADE_IN)
+    }, 200);
 }
 
 
