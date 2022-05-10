@@ -1,11 +1,21 @@
-const images = ["0.jpg", "1.jpg", "2.jpg","3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"]
-const BG_IMAGE = "bgImage"
+// const images = [
+//   "0.jpg",
+//   "1.jpg",
+//   "2.jpg",
+//   "3.jpg",
+//   "4.jpg",
+//   "5.jpg",
+//   "6.jpg",
+//   "7.jpg",
+// ];
+const BG_IMAGE = "bgImage";
 
-const chosenImage = images[Math.floor(Math.random() * images.length)]
+// const chosenImage = images[Math.floor(Math.random() * images.length)]
 
 const bgImage = document.createElement("img");
-bgImage.classList.add(BG_IMAGE)
+bgImage.classList.add(BG_IMAGE);
 
-bgImage.src = `img/${chosenImage}`;
+// bgImage.src = `img/${chosenImage}`;
+bgImage.src = `https://source.unsplash.com/random`;
 
-document.body.appendChild(bgImage)
+document.body.appendChild(bgImage);

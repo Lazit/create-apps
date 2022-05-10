@@ -61,6 +61,10 @@ input{
     sans-serif;
     font-size: 20px;
 }
+.greeting-box input {
+    color: white;
+    cursor: pointer;
+}
 .logout{
     height: 20px;
     border: 0;
