@@ -16,6 +16,6 @@ const bgImage = document.createElement("img");
 bgImage.classList.add(BG_IMAGE);
 
 // bgImage.src = `img/${chosenImage}`;
-bgImage.src = `https://source.unsplash.com/random`;
+bgImage.src = `https://source.unsplash.com/1920x1080/?nature`;
 
 document.body.appendChild(bgImage);
